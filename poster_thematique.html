@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poster Thématique</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Poster une Thématique</h1>
+        <form id="posterThematiqueForm" method="post" action="poster_thematique.php">
+            <label for="domaine">Domaine :</label>
+            <select name="domaine" id="domaine">
+                <option value="mecanique">Mécanique</option>
+                <option value="electricite">Électricité</option>
+                <option value="philosophie">Philosophie</option>
+                <option value="anglais">Anglais</option>
+                <option value="intelligence_artificielle">Intelligence artificielle</option>
+                <option value="robotique">Robotique</option>
+            </select><br><br>
+            <label for="theme">Thème :</label>
+            <textarea name="theme" id="theme" rows="4" cols="50" required></textarea><br><br>
+            <button type="submit" name="poster_thematique">Poster Thématique</button>
+        </form>
+    </div>
+
+    <script>
+        // Affichage de la notification si elle est présente dans l'URL
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const successMessage = urlParams.get('success');
+            if (successMessage === 'true') {
+                alert('Thématique postée avec succès !');
+            }
+        });
+    </script>
+</body>
+</html>
+

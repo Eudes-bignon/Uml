@@ -1,0 +1,195 @@
+css
+
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Styles des boutons */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* Styles des formulaires */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea,
+button {
+    display: block;
+    width: calc(100% - 22px);
+    padding: 12px;
+    margin: 10px auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+select,
+textarea {
+    height: 120px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Styles spécifiques à chaque page */
+/* Page d'accueil */
+#index .container {
+    max-width: 600px;
+}
+
+/* Page d'inscription */
+#inscription .container {
+    max-width: 400px;
+}
+
+/* Page de connexion */
+#connexion .container {
+    max-width: 400px;
+}
+
+/* Page de poster une thématique */
+#poster_thematique .container {
+    max-width: 600px;
+}
+
+/* Page de recherche de thématique */
+#recherche_thematique .container {
+    max-width: 400px;
+css
+
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Styles des boutons */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* Styles des formulaires */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea,
+button {
+    display: block;
+    width: calc(100% - 22px);
+    padding: 12px;
+    margin: 10px auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+select,
+textarea {
+    height: 120px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Styles spécifiques à chaque page */
+/* Page d'accueil */
+#index .container {
+    max-width: 600px;
+}
+
+/* Page d'inscription */
+#inscription .container {
+    max-width: 400px;
+}
+
+/* Page de connexion */
+#connexion .container {
+    max-width: 400px;
+}
+
+/* Page de poster une thématique */
+#poster_thematique .container {
+    max-width: 600px;
+}
+
+/* Page de recherche de thématique */
+#recherche_thematique .container {
+    max-width: 400px;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rechercher Thématiques</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="path/to/fontawesome.min.css">
+    <style>
+        /* Styles CSS pour les liens */
+        #options a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        #options a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Rechercher Thématiques</h1>
+        <div id="thematiquesList">
+            <!-- Ici seront affichées les thématiques -->
+        </div>
+        <div id="options">
+            <a id="posterThematiqueLink" href="poster_thematique.html">Poster une thématique</a>
+            <a id="rechercherThematiqueLink" href="rechercher_thematique.html">Rechercher une thématique</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const thematiquesList = document.getElementById('thematiquesList');
+            const posterThematiqueLink = document.getElementById('posterThematiqueLink');
+            const rechercherThematiqueLink = document.getElementById('rechercherThematiqueLink');
+
+            // Vérifier s'il y a des thématiques déjà postées
+            const thematiques = []; // Supposons que c'est un tableau de thématiques
+            if (thematiques.length > 0) {
+                // Afficher la liste des thématiques
+                thematiques.forEach(function(thematique) {
+                    const link = document.createElement('a');
+                    link.textContent = thematique;
+                    link.href = "chat.html?thematique=" + encodeURIComponent(thematique);
+                    link.classList.add('thematiqueLink');
+                    thematiquesList.appendChild(link);
+                });
+            } else {
+                // Afficher un message indiquant qu'il n'y a aucune thématique
+                const message = document.createElement('p');
+                message.textContent = 'Aucune thématique n\'a encore été postée.';
+                thematiquesList.appendChild(message);
+
+                // Activer l'option "Poster une thématique" même s'il n'y a pas de thématiques
+                posterThematiqueLink.style.pointerEvents = 'auto';
+                posterThematiqueLink.style.color = '#fff';
+                posterThematiqueLink.style.backgroundColor = '#007bff';
+            }
+
+            // Désactiver le lien "Rechercher Thématiques" s'il n'y a pas de thématiques
+            if (thematiques.length === 0) {
+                rechercherThematiqueLink.style.pointerEvents = 'none';
+                rechercherThematiqueLink.style.color = 'grey';
+            }
+        });
+    </script>
+</body>
+</html>
+

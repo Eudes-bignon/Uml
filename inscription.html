@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Inscription</h1>
+        <form id="inscriptionForm" action="connexion.html" method="post">
+            <input type="text" name="nom" id="nom" placeholder="Nom" required>
+            <input type="text" name="prenom" id="prenom" placeholder="Prénom" required>
+            <input type="email" name="email" id="email" placeholder="Email" required>
+            <input type="password" name="mot_de_passe" id="mot_de_passe" placeholder="Mot de passe" required>
+            <input type="password" name="confirmer_mot_de_passe" id="confirmer_mot_de_passe" placeholder="Confirmer le mot de passe" required>
+            <button type="submit" id="submitBtn" disabled>S'inscrire</button>
+            <div id="errorMessage" style="color: red; margin-top: 5px;"></div>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Récupérer les éléments du formulaire
+            const nomInput = document.getElementById('nom');
+            const prenomInput = document.getElementById('prenom');
+            const emailInput = document.getElementById('email');
+            const motDePasseInput = document.getElementById('mot_de_passe');
+            const confirmerMotDePasseInput = document.getElementById('confirmer_mot_de_passe');
+            const submitBtn = document.getElementById('submitBtn');
+            const errorMessage = document.getElementById('errorMessage');
+
+            // Fonction de vérification des contraintes
+            function checkConstraints() {
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                const passwordPattern = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
+               
+                const isEmailValid = emailPattern.test(emailInput.value);
+                const isPasswordValid = passwordPattern.test(motDePasseInput.value);
+
+                if (isEmailValid && isPasswordValid) {
+                    submitBtn.removeAttribute('disabled');
+                    errorMessage.textContent = '';
+                } else {
+                    submitBtn.setAttribute('disabled', 'disabled');
+
+                    if (!isEmailValid) {
+                        errorMessage.textContent = 'L\'email doit contenir le symbole @.';
+                    } else if (!isPasswordValid) {
+                        errorMessage.textContent = 'Le mot de passe doit contenir au moins une lettre majuscule et un chiffre.';
+                    }
+                }
+            }
+
+            // Vérifier le formulaire à chaque fois qu'un champ est modifié
+            nomInput.addEventListener('input', checkConstraints);
+            prenomInput.addEventListener('input', checkConstraints);
+            emailInput.addEventListener('input', checkConstraints);
+            motDePasseInput.addEventListener('input', checkConstraints);
+            confirmerMotDePasseInput.addEventListener('input', checkConstraints);
+        });
+    </script>
+</body>
+</html>
+

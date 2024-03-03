@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="path/to/fontawesome.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Connexion</h1>
+        <form id="connexionForm" method="post">
+            <input type="email" name="email" id="email" placeholder="Email" required>
+            <input type="password" name="mot_de_passe" id="mot_de_passe" placeholder="Mot de passe" required>
+            <button type="submit" id="submitBtn">Se connecter</button>
+            <div id="errorMessage" style="color: red; margin-top: 5px;"></div>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const emailInput = document.getElementById('email');
+            const motDePasseInput = document.getElementById('mot_de_passe');
+
+            document.getElementById('connexionForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Empêcher la soumission par défaut du formulaire
+
+                // Vérifier les informations de connexion
+                const email = emailInput.value;
+                const password = motDePasseInput.value;
+
+                // Ici, vous pouvez vérifier les informations de connexion avec votre système de gestion des utilisateurs
+                const defaultEmail = 'utilisateur@example.com';
+                const defaultPassword = 'MotDePasse123';
+                const isConnected = (email === defaultEmail && password === defaultPassword);
+
+                if (isConnected) {
+                    // Si les informations de connexion sont valides, rediriger vers la page de recherche de thématiques
+                    window.location.href = 'rechercher_thematique.html';
+                } else {
+                    // Si les informations de connexion sont incorrectes, afficher un message d'erreur
+                    const errorMessage = document.getElementById('errorMessage');
+                    errorMessage.textContent = 'Adresse email ou mot de passe incorrect.';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
